@@ -11,7 +11,7 @@ function reducer(state = { count: 0 }, action) {
 }
 
 function dispatch (action){
-    state = reducer(state = { count : 0}, action);
+    state = reducer(state, action);
     render();
 }
 
@@ -21,3 +21,8 @@ function render (){
 }
 
 dispatch({type: "@@INIT"})
+
+let button = document.getElementById("button");
+button.addEventListener("click", () => {
+    dispatch({ type: "counter/increment"})
+})
